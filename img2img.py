@@ -86,7 +86,6 @@ text_embeddings = torch.cat([uncond_embeddings, text_embeddings], dim=0)
 # 2. get new scheduler with strength to solve SDE
 # 3. add noise to init latent to the maximum noise level of current scheduler
 # 3. denoise step with text guidance 
-from tqdm.auto import tqdm 
 
 
 
@@ -110,5 +109,9 @@ for t in tqdm(new_scheduler.timesteps):
 
     # compute the previous noisy sample x_t -> x_t-1
     latents = new_scheduler.step(noise_pred, t, latents).prev_sample
+
+
+# visualize image
+latents_to_pil(latents)[0]
 
     
