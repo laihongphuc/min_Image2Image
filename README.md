@@ -24,6 +24,7 @@ python img2img.py
 ```
 ## Example
 Real image
+
 ![](./content/real_image.png)
 
 Text prompt: "An oil painting of a man on a bench"
